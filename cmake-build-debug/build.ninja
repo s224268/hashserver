@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_untitled4: phony || CMakeFiles/untitled4
 
 build CMakeFiles/untitled4.dir/server.c.obj: C_COMPILER__untitled4_Debug C$:/Users/banto/CLionProjects/untitled4/server.c || cmake_object_order_depends_target_untitled4
   DEP_FILE = CMakeFiles\untitled4.dir\server.c.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu2x
+  FLAGS = -g -fdiagnostics-color=always -std=gnu11
   OBJECT_DIR = CMakeFiles\untitled4.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled4.dir
 
