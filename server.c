@@ -14,12 +14,11 @@ uint64_t match(uint8_t hash[32], uint64_t start, uint64_t end){
         char hexstring[16];
         sprintf(hexstring, "%llX", start);
         char guess[32];//Shouldnt this be 16?
+        //printf("%s\n", hexstring);
 
-       // unsigned char hexstring[32];
         SHA256(hexstring, strlen(hexstring), guess);
         //printf("%s", hash);
-        if (strcmp(hexstring, hash) == 0){
-            printf("%s", "boobs");
+        if (strcmp(guess, hash) == 0){
             printf("%llu", start);
             return start;
         }
