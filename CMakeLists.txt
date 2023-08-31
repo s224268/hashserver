@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.25)
-project(untitled4 C)
+project(hashserver)
 
-set(CMAKE_C_STANDARD 11)
+# Find OpenSSL
+find_package(OpenSSL REQUIRED)
 
-add_executable(untitled4 server.c)
+# Add your source files
+add_executable(hashserver server.c)
+
+# Link OpenSSL libraries to your project
+target_link_libraries(hashserver PRIVATE OpenSSL::SSL OpenSSL::Crypto)
