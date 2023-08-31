@@ -4,8 +4,7 @@
 
 uint64_t match(uint8_t hash[32], uint64_t start, uint64_t end){
 
-    int j;
-    for (j = 0; j < 32; j++) {
+    for (int j = 0; j < 32; j++) {
         printf("%02x", hash[j]);
     }
     printf("\n");
@@ -14,7 +13,6 @@ uint64_t match(uint8_t hash[32], uint64_t start, uint64_t end){
         char hexstring[16];
         sprintf(hexstring, "%llX", start);
         char guess[32];//Shouldnt this be 16?
-        //printf("%s\n", hexstring);
 
         SHA256(hexstring, strlen(hexstring), guess);
         //printf("%s", hash);
@@ -30,7 +28,7 @@ int main()
 {
     uint64_t correct = 23342345;
 
-    char hexstring[16];
+    char hexstring[16]; //It is unclear whether the input should be a char[] or an actual number
     unsigned char hash[32];
     sprintf(hexstring, "%llX", correct);
 
@@ -38,13 +36,13 @@ int main()
 
     //uint64ToHexBuffer(correct, hexstring);
     SHA256(hexstring, strlen(hexstring), hash);
-    int j;
-    for (j = 0; j < 32; j++) {
+
+    for (int j = 0; j < 32; j++) {
         printf("%02x", hash[j]);
     }
     printf("\n");
 
-    match(hash, 23342342, 23342349);
+    match(hash, 2334234, 23342349);
 
     return 0;
 }
